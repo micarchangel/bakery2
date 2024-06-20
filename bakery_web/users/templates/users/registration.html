@@ -1,0 +1,80 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+    <title>Вход</title>
+{% endblock %}
+
+{% block header %}
+    {% include 'main/header.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="user_aut">
+    {% if form.errors %}
+      <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+
+    {% if next %}
+      {% if user.is_authenticated %}
+        <p>Your account doesn't have access to this page. To proceed,
+        please login with an account that has access.</p>
+      {% else %}
+        <p>Please login to see this page.</p>
+      {% endif %}
+    {% endif %}
+
+    <form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    <table>
+
+    <tr>
+      <td>{{ form.username.label_tag }}</td>
+      <td>{{ form.username }}</td>
+    </tr>
+
+    <tr>
+      <td>{{ form.password.label_tag }}</td>
+      <td>{{ form.password }}</td>
+    </tr>
+    </table>
+
+    <input type="submit" value="login" />
+    <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+
+    {# Assumes you setup the password_reset view in your URLconf #}
+    <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+    </div>>
+    <div class="user_reg">
+        <h2 class="user_title">Регистрация</h2>
+        <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit">Отправить</button>
+        </form>
+</div>
+<style>
+    .user_reg {
+    fill: #e12549;
+    background: #e12549;
+    border-radius: 30px;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: normal;
+    margin: 90px;
+    padding: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    }
+    .user_title {
+        font-weight: 400;
+    }
+</style>
+{% endblock %}
+
+{% block footer %}
+    {% include 'main/footer.html' %}
+{% endblock %}

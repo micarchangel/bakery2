@@ -1,0 +1,123 @@
+{% load static %}
+
+<div class="header">
+  <div class="container">
+    <div class="header__wrap">
+      <div class="header__logo-wrap">
+        <img
+          class="header__logo"
+          width="150px"
+          height="150px"
+          src="{% static 'main/img/ciasteczka.png' %}"
+          alt="logo"
+        />
+        <span class="header__logo-text">Десертный рай</span>
+      </div>
+      <aside>
+        <nav class="header__nav">
+          <ul class="list-reset header__list">
+            <a href="/"><li class="header__item">Главная</li></a>
+            <a href="{% url 'products' %}"> <li class="header__item">Продукты</li></a>
+            <a href="{% url 'about' %}"> <li class="header__item">Описание</li></a>
+            <a href="{% url 'reviews' %}"><li class="header__item">Отзывы</li></a>
+            <a href="{% url 'contact' %}"><li class="header__item">Контакты</li></a>
+            <a href="{% url 'sign_up' %}"><li class="header__item">Вход</li></a>
+            <a href="{% url 'registration' %}"><li class="header__item">Регистрация</li></a>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+    <div class="header__content">
+      <h1 class="header__title">Сладкое делает нас счастливее</h1>
+      <span class="header__subtitle"> После наших тортов, вы точно вернетесь за добавкой!</span>
+      <a href="{% url 'products' %}">
+        <span class="btn-reset header__btn">Выбрать десерт</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+
+
+<style>
+  .header {
+    background-image: url("{% static 'main/img/header.png' %}");
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 1080px;
+    width: 100%;
+  }
+  .header__wrap {
+    margin-bottom: 90px;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+  .header__list {
+    display: flex;
+    gap: 50px;
+  }
+  .header__item {
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  .header__title {
+    margin: 0;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 75px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+  .header__subtitle {
+    margin-bottom: 50px;
+    display: block;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .header__btn {
+    padding: 11px 34px;
+    fill: #e12549;
+    background: #e12549;
+    border-radius: 30px;
+    filter: drop-shadow(0px 0px 19.712px #e12549) drop-shadow(0px 0px 39.424px #e12549)
+      drop-shadow(0px 0px 137.984px #e12549) drop-shadow(0px 0px 275.968px #e12549)
+      drop-shadow(0px 0px 473.088px #e12549) drop-shadow(0px 0px 827.903px #e12549);
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .header__content {
+    text-align: center;
+  }
+  .header__logo-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+  .header__logo {
+    margin-bottom: 10px;
+  }
+  .header__logo-text {
+    color: #fff;
+    font-family: TD Mars;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+</style>

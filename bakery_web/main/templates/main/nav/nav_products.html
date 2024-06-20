@@ -1,0 +1,148 @@
+{% extends 'main/layout.html' %}
+
+{% load static %}
+
+{% block header %}
+    {% include 'main/header.html' %}
+{% endblock %}
+
+{% block content %}
+
+<section class="NavProducts">
+    <div class="container">
+      <div class="NavProducts__wrap">
+        <ul class="list-reset NavProducts__list">
+          <li class="NavProducts__item NavProducts__img-1">
+            <span class="NavProducts__productTtl"> ТИРАМИСУ В СТАКАНЧИКЕ, 4 ШТ </span>
+            <span class="NavProducts__productTtl"> Вес: 0,78 кг </span>
+            <div class="NavProducts__productOrder">
+              <span class="NavProducts__productPrice">1 200 ₽</span>
+              <button class="btn-reset NavProducts__productBtn">Заказать</button>
+            </div>
+          </li>
+          <li class="NavProducts__item NavProducts__img-2">
+            <span class="NavProducts__productTtl"> ТОРТ БАУНТИ 2КГ </span>
+            <span class="NavProducts__productTtl"> Вес: 1,79 кг </span>
+            <div class="NavProducts__productOrder">
+              <span class="NavProducts__productPrice">3 000 ₽</span>
+              <button class="btn-reset NavProducts__productBtn">Заказать</button>
+            </div>
+          </li>
+          <li class="NavProducts__item NavProducts__img-3">
+            <span class="NavProducts__productTtl"> ТОРТ ФУНДУК ШОКОЛАД 2КГ </span>
+            <span class="NavProducts__productTtl"> Вес: 1,87 кг </span>
+            <div class="NavProducts__productOrder">
+              <span class="NavProducts__productPrice">3 200 ₽</span>
+              <button class="btn-reset NavProducts__productBtn">Заказать</button>
+            </div>
+          </li>
+          <li class="NavProducts__item NavProducts__img-4">
+            <span class="NavProducts__productTtl"> ТОРТ ТИРАМИСУ 2КГ </span>
+            <span class="NavProducts__productTtl"> Вес: 2 кг </span>
+            <div class="NavProducts__productOrder">
+              <span class="NavProducts__productPrice">3 200 ₽</span>
+              <button class="btn-reset NavProducts__productBtn">Заказать</button>
+            </div>
+          </li>
+          <li class="NavProducts__item NavProducts__img-5">
+            <span class="NavProducts__productTtl"> ТОРТ МОЛОЧНАЯ ДЕВОЧКА БАНАН/КЛУБН 2КГ </span>
+            <span class="NavProducts__productTtl"> Вес: 2 кг </span>
+            <div class="NavProducts__productOrder">
+              <span class="NavProducts__productPrice">3 000 ₽</span>
+              <button class="btn-reset NavProducts__productBtn">Заказать</button>
+            </div>
+          </li>
+          <li class="NavProducts__item NavProducts__img-6">
+            <span class="NavProducts__productTtl"> ТОРТ МУССОВЫЙ ТРИ ШОКОЛАДА </span>
+            <span class="NavProducts__productTtl"> Вес: 1,78 кг </span>
+            <div class="NavProducts__productOrder">
+              <span class="NavProducts__productPrice">5 200 ₽</span>
+              <button class="btn-reset NavProducts__productBtn">Заказать</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+</section>
+
+<style>
+.NavProducts {
+  padding: 90px;
+}
+.NavProducts__wrap {
+    width: 100%;
+}
+.NavProducts__list {
+    position: relative;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+.NavProducts__item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 290px 25px 25px 25px;
+.NavProducts::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 266px;
+  background-size: cover;
+}
+}
+.NavProducts__img-1 {
+    background-repeat: no-repeat;
+    background-image: url("{% static 'main/img/img-1.jpg' %}");
+}
+.NavProducts__img-2 {
+    background-repeat: no-repeat;
+    background-image: url("{% static 'main/img/img-2.jpg' %}");
+}
+.NavProducts__img-3 {
+    background-repeat: no-repeat;
+    background-image: url("{% static 'main/img/img-3.jpg' %}");
+}
+.NavProducts__img-4 {
+    background-repeat: no-repeat;
+    background-image: url("{% static 'main/img/img-4.jpg' %}");
+}
+.NavProducts__img-5 {
+    background-repeat: no-repeat;
+    background-image: url("{% static 'main/img/img-5.jpg' %}");
+}
+.NavProducts__img-6 {
+    background-repeat: no-repeat;
+    background-image: url({% static 'main/img/img-6.jpg' %});
+}
+.NavProducts__productOrder {
+    display: flex;
+    justify-content: space-between;
+}
+.NavProducts__productTtl {
+    margin-bottom: 20px;
+}
+.NavProducts__productBtn {
+    padding: 5px 15px;
+    background-color: #e12549;
+    border-radius: 30px;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+</style>
+
+{% endblock %}
+
+{% block footer %}
+  {% include 'main/footer.html' %}
+{% endblock %}

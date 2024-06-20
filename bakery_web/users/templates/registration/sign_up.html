@@ -1,0 +1,44 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+    <title>Вход</title>
+{% endblock %}
+
+{% block header %}
+    {% include 'main/header.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="user_aut">
+    <h2 class="user_title">Вход</h2>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-light">Войти</button>
+    </form>
+</div>
+
+<style>
+.user_aut {
+    fill: #e12549;
+    background: #e12549;
+    border-radius: 30px;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: normal;
+    margin: 90px;
+    margin-bottom: 0px;
+    padding: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    }
+</style>
+{% endblock %}
+
+{% block footer %}
+    {% include 'main/footer.html' %}
+{% endblock %}

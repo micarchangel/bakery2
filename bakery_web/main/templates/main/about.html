@@ -1,0 +1,71 @@
+{% load static %}
+
+<div class="about">
+  <div class="container">
+    <div class="about__wrap">
+      <div class="about__left">
+        <h2 class="about__title">Десертный рай</h2>
+        <div class="about__bg">
+          <ul class="list-reset about__list">
+            <li class="about__item">* Квалифицированные кондитеры</li>
+            <li class="about__item">* Используем только натуральные продукты</li>
+            <li class="about__item">* Вкладываем в десерты любовь и уют</li>
+          </ul>
+        </div>
+      </div>
+      <div class="about__right">
+        <img class="about__img" src="{% static 'main/img/photo.jpg' %}" alt="about-img" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .about {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.38);
+  }
+  .about__wrap {
+      display: grid;
+      align-items: center;
+      grid-template-columns: 55% 45%;
+      gap: 40px;
+  }
+  .about__title {
+    text-align: center;
+    margin: 0;
+    margin-bottom: 50px;
+    color: #000;
+    font-family: sans-serif;
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .about__item {
+    color: #000;
+    font-family: sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .about__img {
+    width: 100%;
+    height: 100%;
+  }
+  .about__bg {
+    text-align: left;
+    border-radius: 20px;
+    border: 1px solid rgba(3, 4, 5, 0.1);
+    background-color: #fdeeca;
+    padding: 25px;
+  }
+  .about__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+</style>
